@@ -16,6 +16,7 @@ C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\P
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\service\EmailVerificationTokenService.java
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\service\MailService.java
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\event\listener\OnUserLogoutSuccessEventListener.java
+C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\model\Project.java
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\service\PersonService.java
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\exception\UserLogoutException.java
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\repository\ProjectsRepository.java
@@ -34,7 +35,6 @@ C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\P
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\model\payload\PasswordResetLinkRequest.java
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\validation\validator\NullOrNotBlankValidator.java
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\service\ISkillsService.java
-C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\model\Projects.java
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\exception\ResourceNotFoundException.java
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\repository\PersonRepository.java
 C:\Workspace Argentina Programa\SpringBoot\portfolio-BackEnd\src\main\java\com\Portfolio\Controller\UserController.java

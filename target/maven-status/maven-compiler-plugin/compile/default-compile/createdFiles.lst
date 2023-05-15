@@ -1,3 +1,4 @@
+com\Portfolio\model\Project.class
 com\Portfolio\service\MailService.class
 com\Portfolio\repository\EducationRepository.class
 com\Portfolio\repository\ProjectsRepository.class
@@ -60,7 +61,6 @@ com\Portfolio\event\listener\OnUserAccountChangeListener.class
 com\Portfolio\event\OnUserAccountChangeEvent.class
 com\Portfolio\PortfolioApplication.class
 com\Portfolio\model\Role.class
-com\Portfolio\model\Projects.class
 com\Portfolio\Controller\controller.class
 com\Portfolio\repository\JobTypeRepository.class
 com\Portfolio\event\listener\OnUserLogoutSuccessEventListener.class
