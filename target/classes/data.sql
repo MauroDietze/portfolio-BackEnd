@@ -19,6 +19,6 @@
  */
 
 --Add initial role
-INSERT INTO portfolio.role (ROLE_NAME) VALUES ('ROLE_USER');
-INSERT INTO portfolio.role (ROLE_NAME) VALUES ('ROLE_ADMIN');
+/*INSERT INTO portfolio.role (ROLE_NAME) VALUES ('ROLE_USER');
+INSERT INTO portfolio.role (ROLE_NAME) VALUES ('ROLE_ADMIN');*/
 
