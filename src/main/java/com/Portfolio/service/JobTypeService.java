@@ -13,12 +13,12 @@ public class JobTypeService implements IJobTypeService {
     public JobTypeRepository jobRepo;
 
     @Override
-    public List<JobType> verJobType() {
+    public List<JobType> seeJobType() {
         return jobRepo.findAll();
     }
 
     @Override
-    public JobType buscarJobType(Long id) {
+    public JobType fyndJobType(Long id) {
         return jobRepo.findById(id).orElse(null);
     }
     

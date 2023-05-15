@@ -13,22 +13,27 @@ public class EducationService implements IEducationService {
     public EducationRepository eduRepo;
 
     @Override
-    public List<Education> verEducation() {
+    public List<Education> seeEducation() {
         return eduRepo.findAll();
     }
 
     @Override
-    public void crearEducation(Education edu) {
+    public void newEducation(Education edu) {
+        eduRepo.save(edu);
+    }
+    
+    @Override
+    public void modifyEducation(Education edu) {
         eduRepo.save(edu);
     }
 
     @Override
-    public void borrarEducation(Long id) {
+    public void deleteEducation(Long id) {
         eduRepo.deleteById(id);
     }
 
     @Override
-    public Education buscarEducation(Long id) {
+    public Education fyndEducation(Long id) {
         return eduRepo.findById(id).orElse(null);
     }
     

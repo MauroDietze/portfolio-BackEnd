@@ -16,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @author YOProgramo
 
  */
-
+/*
 @EnableWebMvc
 
 @Configuration
@@ -30,7 +30,4 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/**");
 
     }
-
-   
-
-}
+}*/

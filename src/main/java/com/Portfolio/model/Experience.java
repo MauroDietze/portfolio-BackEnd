@@ -16,10 +16,12 @@ public class Experience {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
+    
     private String company;
     private String position;
     private String description;
     private String job_type;
+    private String image;
     private Year start;
     private Year end;
     
@@ -31,7 +33,8 @@ public class Experience {
             String company, 
             String position, 
             String description, 
-            String job_type, 
+            String job_type,
+            String image,
             Year start, 
             Year end
     ){
@@ -40,6 +43,7 @@ public class Experience {
         this.position = position;
         this.description = description;
         this.job_type = job_type;
+        this.image = image;
         this.start = start;
         this.end = end;
 

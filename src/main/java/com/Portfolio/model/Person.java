@@ -19,7 +19,7 @@ public class Person {
     @Id
     private Long id;
     
-    private String name;
+    private String firstname;
     private String lastname;
     private String address;
     private Date birthdate;
@@ -36,7 +36,7 @@ public class Person {
     
     public Person (
             Long id, 
-            String name, 
+            String firstname, 
             String lastname, 
             String address, 
             Date birthdate, 
@@ -49,7 +49,7 @@ public class Person {
             String image_background_header
     ){
         this.id = id;
-        this.name = name;
+        this.firstname = firstname;
         this.lastname = lastname;
         this.address = address;
         this.birthdate = birthdate;

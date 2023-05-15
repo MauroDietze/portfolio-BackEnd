@@ -13,22 +13,27 @@ public class PersonService implements IPersonService {
     public PersonRepository persoRepo;
 
     @Override
-    public List<Person> verPersonas() {
+    public List<Person> seePersons() {
         return persoRepo.findAll();
     }
 
     @Override
-    public void crearPersona(Person per) {
+    public void newPerson(Person per) {
+        persoRepo.save(per);
+    }
+    
+    @Override
+    public void modifyPerson(Person per) {
         persoRepo.save(per);
     }
 
     @Override
-    public void borrarPersona(Long id) {
+    public void deletePerson(Long id) {
         persoRepo.deleteById(id);
     }
 
     @Override
-    public Person buscarPersona(Long id) {
+    public Person fyndPerson(Long id) {
         return persoRepo.findById(id).orElse(null);
     }
     

@@ -1,14 +1,15 @@
 package com.Portfolio.service;
 
-import com.Portfolio.model.Projects;
+import com.Portfolio.model.Project;
 import java.util.List;
 
 
 public interface IProjectsService {
     
-    public List <Projects> verProjects();
-    public void crearProjects(Projects per);
-    public void borrarProjects(Long id);
-    public Projects buscarProjects(Long id);
+    public List <Project> seeProjects();
+    public void newProject(Project per);
+    public void modifyProject(Project per);
+    public void deletProject(Long id);
+    public Project FyndProject(Long id);
     
 }

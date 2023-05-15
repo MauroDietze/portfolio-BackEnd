@@ -6,9 +6,10 @@ import java.util.List;
 
 public interface IPersonService {
     
-    public List <Person> verPersonas();
-    public void crearPersona(Person per);
-    public void borrarPersona(Long id);
-    public Person buscarPersona(Long id);
+    public List <Person> seePersons();
+    public void newPerson(Person per);
+    public void modifyPerson(Person per);
+    public void deletePerson(Long id);
+    public Person fyndPerson(Long id);
     
 }

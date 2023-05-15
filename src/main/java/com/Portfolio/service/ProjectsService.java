@@ -1,6 +1,6 @@
 package com.Portfolio.service;
 
-import com.Portfolio.model.Projects;
+import com.Portfolio.model.Project;
 import com.Portfolio.repository.ProjectsRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,22 +13,27 @@ public class ProjectsService implements IProjectsService {
     public ProjectsRepository proRepo;
 
     @Override
-    public List<Projects> verProjects() {
+    public List<Project> seeProjects() {
         return proRepo.findAll();
     }
-
+    
     @Override
-    public void crearProjects(Projects pro) {
+    public void newProject(Project pro) {
         proRepo.save(pro);
     }
 
     @Override
-    public void borrarProjects(Long id) {
+    public void modifyProject(Project pro) {
+        proRepo.save(pro);
+    }
+
+    @Override
+    public void deletProject(Long id) {
         proRepo.deleteById(id);
     }
 
     @Override
-    public Projects buscarProjects(Long id) {
+    public Project FyndProject(Long id) {
         return proRepo.findById(id).orElse(null);
     }
     
