@@ -35,9 +35,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-@Profile("!dev")
 @Configuration
-@EnableWebSecurity(debug = true)
+@EnableWebSecurity(debug = false)
 @EnableJpaRepositories(basePackages = "com.Portfolio.repository")
 @EnableMethodSecurity(
         securedEnabled = true,
