@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-al2-jdk
+FROM amazoncorretto:17
 
 MAINTAINER Mauro
 
