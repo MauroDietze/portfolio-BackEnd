@@ -44,7 +44,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolio-frontend-mauro.web.app/")
 @Tag(name = "User Rest API", description = "Defines endpoints for the logged in user. It's secured by default")
 
 public class UserController {
