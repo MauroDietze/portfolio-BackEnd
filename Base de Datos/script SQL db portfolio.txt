@@ -1,0 +1,154 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema portfolio
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema portfolio
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `portfolio` DEFAULT CHARACTER SET utf8 ;
+USE `portfolio` ;
+
+-- -----------------------------------------------------
+-- Table `portfolio`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `portfolio`.`user` (
+  `iduser` INT NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  PRIMARY KEY (`iduser`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `portfolio`.`person`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `portfolio`.`person` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `lastname` VARCHAR(45) NULL,
+  `address` VARCHAR(45) NULL,
+  `dateOfBirth` DATE NULL,
+  `phone` VARCHAR(12) NULL,
+  `e-mail` VARCHAR(45) NULL,
+  `about_me` VARCHAR(200) NULL,
+  `image` VARCHAR(100) NULL,
+  `backImage` VARCHAR(100) NULL,
+  `user_iduser` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_person_user1_idx` (`user_iduser` ASC) VISIBLE,
+  CONSTRAINT `fk_person_user1`
+    FOREIGN KEY (`user_iduser`)
+    REFERENCES `portfolio`.`user` (`iduser`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `portfolio`.`job_type`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `portfolio`.`job_type` (
+  `id` INT NOT NULL,
+  `typeName` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `portfolio`.`work_experience`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `portfolio`.`work_experience` (
+  `id` INT NOT NULL,
+  `company` VARCHAR(45) NULL,
+  `currentJob` TINYINT NULL,
+  `position` VARCHAR(45) NULL,
+  `startDate` DATE NULL,
+  `endDate` DATE NULL,
+  `description` VARCHAR(200) NULL,
+  `person_id` INT NOT NULL,
+  `job_type_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_work_experience_person_idx` (`person_id` ASC) VISIBLE,
+  INDEX `fk_work_experience_job_type1_idx` (`job_type_id` ASC) VISIBLE,
+  CONSTRAINT `fk_work_experience_person`
+    FOREIGN KEY (`person_id`)
+    REFERENCES `portfolio`.`person` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_work_experience_job_type1`
+    FOREIGN KEY (`job_type_id`)
+    REFERENCES `portfolio`.`job_type` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `portfolio`.`education`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `portfolio`.`education` (
+  `ideducation` INT NOT NULL,
+  `school` VARCHAR(45) NULL,
+  `title` VARCHAR(45) NULL,
+  `img` VARCHAR(100) NULL,
+  `career` VARCHAR(45) NULL,
+  `score` INT NULL,
+  `start` YEAR(4) NULL,
+  `end` YEAR(4) NULL,
+  `person_id` INT NOT NULL,
+  PRIMARY KEY (`ideducation`),
+  INDEX `fk_education_person1_idx` (`person_id` ASC) VISIBLE,
+  CONSTRAINT `fk_education_person1`
+    FOREIGN KEY (`person_id`)
+    REFERENCES `portfolio`.`person` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `portfolio`.`projects`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `portfolio`.`projects` (
+  `idachivements` INT NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `description` VARCHAR(200) NULL,
+  `person_id` INT NOT NULL,
+  PRIMARY KEY (`idachivements`),
+  INDEX `fk_achivements_person1_idx` (`person_id` ASC) VISIBLE,
+  CONSTRAINT `fk_achivements_person1`
+    FOREIGN KEY (`person_id`)
+    REFERENCES `portfolio`.`person` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `portfolio`.`skills`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `portfolio`.`skills` (
+  `idskills` INT NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `type` TINYINT NULL,
+  `progress` INT(100) NULL,
+  `person_id` INT NOT NULL,
+  PRIMARY KEY (`idskills`),
+  INDEX `fk_skills_person1_idx` (`person_id` ASC) VISIBLE,
+  CONSTRAINT `fk_skills_person1`
+    FOREIGN KEY (`person_id`)
+    REFERENCES `portfolio`.`person` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
