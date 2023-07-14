@@ -61,7 +61,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://192.168.0.11:4200")
+@CrossOrigin(origins = "http://192.168.0.11")
 @Tag(name = "Authorization Rest API", description = "Defines endpoints that can be hit only when the user is not " +
         "logged in. It's not secured by default.")
 
